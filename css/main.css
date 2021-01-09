@@ -1,0 +1,308 @@
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: inherit;
+}
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+}
+body {
+    font-family: "Nunito", sans-serif;
+    font-weight: 300;
+    line-height: 1.6;
+    color: #6d5d4b;
+}
+.container {
+    display: grid;
+    grid-template-rows: 80vh min-content 40vw repeat(3, min-content);
+    grid-template-columns: [sidebar-start] 8rem [sidebar-end full-start] minmax(6rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end];
+}
+.features {
+    padding: 15rem;
+    grid-column: full-start / full-end;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(32rem, 1fr));
+    gap: 6rem;
+}
+.feature {
+    display: grid;
+    grid-template-columns: min-content 1fr;
+    justify-items: center;
+    column-gap: 5rem;
+}
+.feature__icon {
+    height: 5rem;
+    fill: #c69963;
+}
+.feature__text {
+    font-size: 1.7rem;
+}
+.footer {
+    background-color: #101d2c;
+    padding: 8rem;
+    grid-column: full-start / full-end;
+}
+.nav {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+    align-items: center;
+    justify-items: center;
+    gap: 2rem;
+}
+.nav__link:link,
+.nav__link:visited {
+    font-size: 1.4rem;
+    font-family: "Josefin Sans", sans-serif;
+    color: #f9f7f6;
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 1.5rem;
+    display: block;
+    transition: all 0.2s ease-out;
+    backface-visibility: hidden;
+}
+.nav__link:hover,
+.nav__link:active {
+    background-color: rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
+}
+.copyright__text {
+    font-size: 1.4rem;
+    color: #f9f7f6;
+    text-align: center;
+    padding: 5rem 10rem 0;
+}
+.header {
+    background-image: linear-gradient(to right, rgba(16, 29, 44, 0.93), rgba(16, 29, 44, 0.93)), url(../img/hero.jpeg);
+    background-size: cover;
+    background-position: center;
+    padding: 8rem;
+    padding-top: 4rem;
+    grid-column: full-start / col-end 6;
+    display: grid;
+    grid-template-rows: 1fr min-content minmax(min-content, 6rem) 1fr min-content;
+    grid-template-columns: minmax(min-content, max-content);
+    justify-content: center;
+    row-gap: 1.5rem;
+}
+.header__logo {
+    height: 3rem;
+    display: grid;
+    justify-self: center;
+}
+.header__btn {
+    align-self: start;
+    justify-self: start;
+}
+.header__seenon-text {
+    font-size: 1.6rem;
+    color: #aaa;
+    display: grid;
+    grid-template-columns: 1fr max-content 1fr;
+    align-items: center;
+    column-gap: 1.5rem;
+}
+.header__seenon-text::before,
+.header__seenon-text::after {
+    content: "";
+    display: block;
+    background-color: currentColor;
+    height: 1px;
+    width: 100%;
+}
+.header__seenon-logos {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-items: center;
+    align-items: center;
+}
+.header__seenon-logos img {
+    max-height: 2.5rem;
+    max-width: 100%;
+    filter: brightness(70%);
+}
+.homes {
+    margin: 15rem 0;
+    grid-column: center-start / center-end;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    gap: 7rem;
+}
+.home {
+    background-color: #f9f7f6;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 3.5rem;
+    justify-items: start;
+}
+.home__photo {
+    width: 100%;
+    object-fit: cover;
+    grid-column: 1 / -1;
+    grid-row: 1 / 2;
+}
+.home__name {
+    font-size: 1.5rem;
+    font-family: "Josefin Sans", sans-serif;
+    font-weight: 400;
+    color: #f9f7f6;
+    background-color: #101d2c;
+    width: 80%;
+    padding: 1rem;
+    text-align: center;
+    transform: translateY(10.8rem);
+    grid-column: 1 / -1;
+    grid-row: 1 / 2;
+    align-self: center;
+    justify-self: center;
+}
+.home__location,
+.home__rooms,
+.home__area,
+.home__price {
+    font-size: 1.5rem;
+    margin-left: 2rem;
+    display: flex;
+    align-items: center;
+}
+.home__location svg,
+.home__rooms svg,
+.home__area svg,
+.home__price svg {
+    height: 2rem;
+    width: 2rem;
+    fill: #c69963;
+    margin-right: 1rem;
+}
+.home__btn {
+    grid-column: 1 / -1;
+    width: 100%;
+}
+.realtors {
+    background-color: #101d2c;
+    padding: 3rem;
+    grid-column: col-end 6 / full-end;
+    display: grid;
+    align-content: center;
+    justify-content: center;
+    row-gap: 2rem;
+    justify-items: center;
+}
+.realtors__list {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: min-content max-content;
+    column-gap: 2rem;
+    row-gap: 5vh;
+    align-items: center;
+}
+.realtors__img {
+    display: block;
+    height: 7rem;
+    width: 7rem;
+    border-radius: 50%;
+}
+.realtors__sold {
+    color: #aaa;
+    text-transform: uppercase;
+    margin-top: -3px;
+}
+.sidebar {
+    background-color: #c69963;
+    grid-row: 1 / -1;
+}
+.story__picture {
+    background-image: linear-gradient(#c69963, rgba(198, 153, 99, 0.5)), url(../img/back.jpg);
+    background-size: cover;
+    background-position: center;
+    grid-column: full-start / col-end 4;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    align-items: center;
+}
+.story__picture--1 {
+    grid-column: 2 / 6;
+    grid-row: 2 / 6;
+    width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+}
+.story__picture--2 {
+    grid-column: 4 / -1;
+    grid-row: 3 / 7;
+    width: 115%;
+    max-height: 100%;
+    object-fit: cover;
+    z-index: 10;
+}
+.story__content {
+    background-color: #f9f7f6;
+    padding: 10rem 8vw;
+    grid-column: col-start 5 / full-end;
+    display: grid;
+    align-content: center;
+    justify-items: start;
+}
+.story__text {
+    font-size: 1.5rem;
+    font-style: italic;
+}
+.heading-1,
+.heading-2,
+.heading-4 {
+    font-family: "Josefin Sans", sans-serif;
+    font-weight: 400;
+}
+.heading-1 {
+    font-size: 4.5rem;
+    line-height: 1;
+    color: #f9f7f6;
+}
+.heading-2 {
+    font-size: 4rem;
+    line-height: 1;
+    font-style: italic;
+}
+.heading-3 {
+    font-size: 1.6rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    color: #c69963;
+    line-height: 1;
+}
+.heading-4 {
+    font-size: 1.9rem;
+}
+.heading-2--dark {
+    color: #6d5d4b;
+}
+.btn {
+    font-size: 1.5rem;
+    font-family: "Josefin Sans", sans-serif;
+    font-weight: 400;
+    text-transform: uppercase;
+    color: #fff;
+    background-color: #c69963;
+    padding: 1.8rem 3rem;
+    border: none;
+    cursor: pointer;
+}
+.btn:hover {
+    background-color: #b28451;
+}
+.mb-sm {
+    margin-bottom: 2rem;
+}
+.mb-md {
+    margin-bottom: 3rem;
+}
+.mb-lg {
+    margin-bottom: 4rem;
+}
+/*# sourceMappingURL=main.css.map */
